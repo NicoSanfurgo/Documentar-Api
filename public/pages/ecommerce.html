@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/card.css" />
+    <title>Ecommerce</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul id="admin-navbar"></ul>
+      </nav>
+      <div class="header__user">
+        <div class="user-data grid-item">
+          <img
+            src="../img/no-user.png"
+            class="logoAvatar"
+            alt="logo"
+            id="logo-avatar"
+          />
+          <small id="small-email"></small>
+        </div>
+        <h3 class="grid-item middle-element">
+          Bienvenido <span id="span-name"></span>!
+        </h3>
+        <div class="icon-container">
+          <div id="hidden-admin">
+            <a href="./chat.html">
+              <i
+                class="fa-regular fa-comment-dots grid-item"
+                title="Chatear con soporte"
+              ></i>
+            </a>
+            <a href="./orders.html"
+              ><i
+                class="fa-solid fa-list grid-item"
+                title="Mis pedidos anteriores"
+              ></i
+            ></a>
+            <i
+              class="fa-solid fa-shopping-cart grid-item"
+              id="openDialogBtn"
+              title="Carrito"
+            ></i>
+          </div>
+          <i
+            class="fa-solid fa-right-from-bracket grid-item"
+            onclick="logout()"
+            title="Cerrar sesión"
+          ></i>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h1>Tienda de productos</h1>
+      <hr />
+      <div class="filter-section">
+        <label for="category">Filtrar por categoría:</label>
+        <select name="category" id="category" class="select">
+          <option value="Todos">Todos</option>
+          <option value="Alimentos">Alimentos</option>
+          <option value="Electrónica">Electrónica</option>
+          <option value="Herramientas">Herramientas</option>
+          <option value="Ropa">Ropa</option>
+          <option value="Juguetes">Juguetes</option>
+          <option value="Deportes">Deportes</option>
+          <option value="Muebles">Muebles</option>
+          <option value="Otros">Otros</option>
+        </select>
+      </div>
+      <hr />
+      <div id="products-container"></div>
+      <dialog id="dialog">
+        <h2>Carrito</h2>
+        <hr />
+        <div id="cartContainer"></div>
+        <div id="dialogTotalPrice"></div>
+        <div class="dialog__buttons">
+          <button class="btn buy-cart">Confirmar compra!</button>
+          <button class="btn" id="closeDialogBtn">Seguir comprando</button>
+        </div>
+      </dialog>
+    </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://kit.fontawesome.com/94c0117dd6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/getData.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/sessions.js"></script>
+    <script src="../js/cart.js"></script>
+  </body>
+</html>

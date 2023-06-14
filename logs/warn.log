@@ -1,0 +1,8 @@
+[2023-01-16T19:56:46.486] [WARN] warn - Hubo un acceso en la ruta '/63c5d5e6167dce8a9b0ff9bf' método 'DELETE' no autorizada por falta de credenciales
+[2023-02-06T17:02:10.795] [WARN] warn - Un usuario sin los permisos suficientes intentó hacer una transacción en la ruta '/' método 'POST'
+[2023-02-16T16:37:03.415] [WARN] warn - Un usuario sin los permisos suficientes intentó hacer una transacción en la ruta '/1i3m7g24kle7i4qud' método 'DELETE'
+[2023-03-09T20:06:47.757] [ERROR] warn - Error al verificar el token de autenticación: JsonWebTokenError: invalid signature
+[2023-03-14T18:39:24.994] [ERROR] warn - Error al verificar el token de autenticación: JsonWebTokenError: invalid token
+[2023-03-14T18:39:30.692] [WARN] warn - Un usuario sin los permisos suficientes intentó hacer una transacción en la ruta '/' método 'POST'
+[2023-03-14T18:40:42.897] [ERROR] warn - Error al verificar el token de autenticación: TokenExpiredError: jwt expired
+[

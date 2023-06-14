@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Chat</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul id="admin-navbar"></ul>
+      </nav>
+      <div class="header__user">
+        <div class="user-data grid-item">
+          <a href="/"
+            ><img
+              src="../img/no-user.png"
+              class="logoAvatar"
+              alt="logo"
+              id="logo-avatar"
+          /></a>
+          <small id="small-email"></small>
+        </div>
+        <h3 class="grid-item middle-element">
+          Bienvenido <span id="span-name"></span>!
+        </h3>
+        <div class="icon-container">
+          <a href="./orders.html">
+            <i
+              class="fa-solid fa-list grid-item"
+              title="Mis pedidos anteriores"
+            ></i
+          ></a>
+          <i
+            class="fa-solid fa-right-from-bracket grid-item"
+            onclick="logout()"
+            title="Cerrar sesión"
+          ></i>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>Chat con soporte:</h2>
+        <div class="chat-container">
+          <form id="chat-form">
+            <label for="chatMessage">Escribe tu mensaje:</label>
+            <input
+              type="text"
+              id="chatMessage"
+              name="chatMessage"
+              placeholder="Hola, quisiera saber..."
+              required
+            />
+            <input type="submit" class="btn" value="Enviar" />
+          </form>
+          <div id="messages"></div>
+        </div>
+      </section>
+    </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://kit.fontawesome.com/94c0117dd6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/getData.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/websocket.js"></script>
+    <script src="../js/sessions.js"></script>
+  </body>
+</html>

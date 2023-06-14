@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Carga de productos</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul id="admin-navbar"></ul>
+      </nav>
+      <div class="header__user">
+        <div class="user-data grid-item">
+          <img
+            src="../img/no-user.png"
+            class="logoAvatar"
+            alt="logo"
+            id="logo-avatar"
+          />
+          <small id="small-email"></small>
+        </div>
+        <h3 class="grid-item middle-element">
+          Bienvenido <span id="span-name"></span>!
+        </h3>
+        <div class="icon-container">
+          <i
+            class="fa-solid fa-right-from-bracket grid-item"
+            onclick="logout()"
+            title="Cerrar sesión"
+          ></i>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h1>Sección verificación productos</h1>
+      <hr />
+      <section>
+        <h2>Listado de productos:</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th class="hide-mobile">Código</th>
+              <th class="hide-mobile">Precio</th>
+              <th class="hide-mobile">Stock</th>
+              <th class="hide-mobile">Imagen</th>
+              <th class="hide-mobile">Timestamp</th>
+              <th class="hide-mobile">Categoría</th>
+              <th class="hide-mobile">Descripción</th>
+            </tr>
+          </thead>
+          <tbody id="products-container"></tbody>
+        </table>
+      </section>
+      <hr />
+      <div class="handle-products">
+        <section>
+          <h2>Cargar producto:</h2>
+          <form id="create-product-form">
+            <label for="prodName">Nombre</label>
+            <input type="text" name="prodName" id="prodName" required />
+
+            <label for="code">Código</label>
+            <input type="text" name="code" id="code" required />
+
+            <label for="price">Precio</label>
+            <input type="number" name="price" id="price" required />
+
+            <label for="stock">Stock</label>
+            <input type="number" name="stock" id="stock" required />
+
+            <label for="photo">URL de Imagen</label>
+            <input type="url" name="photo" id="photo" required />
+
+            <label for="category">Categoría</label>
+            <select name="category" id="category" required>
+              <option value="Alimentos">Alimentos</option>
+              <option value="Electrónica">Electrónica</option>
+              <option value="Herramientas">Herramientas</option>
+              <option value="Ropa">Ropa</option>
+              <option value="Juguetes">Juguetes</option>
+              <option value="Deportes">Deportes</option>
+              <option value="Muebles">Muebles</option>
+              <option value="Otros">Otros</option>
+            </select>
+
+            <label for="description">Descripción</label>
+            <textarea
+              name="description"
+              id="description"
+              cols="30"
+              rows="10"
+              required
+            ></textarea>
+
+            <button type="submit" class="btn">Enviar</button>
+          </form>
+        </section>
+
+        <section>
+          <h2>Actualizar producto:</h2>
+          <form id="update-product-form">
+            <label for="id">ID</label>
+            <input type="text" name="id" id="id" required />
+
+            <label for="updateName">Nombre</label>
+            <input type="text" name="updateName" id="updateName" required />
+
+            <label for="updateCode">Código</label>
+            <input type="text" name="updateCode" id="updateCode" required />
+
+            <label for="updatePrice">Precio</label>
+            <input type="number" name="updatePrice" id="updatePrice" required />
+
+            <label for="updateStock">Stock</label>
+            <input type="number" name="updateStock" id="updateStock" required />
+
+            <label for="updatePhoto">URL de Imagen</label>
+            <input type="url" name="updatePhoto" id="updatePhoto" required />
+
+            <label for="updateCategory">Categoría</label>
+            <select name="updateCategory" id="updateCategory" required>
+              <option value="Alimentos">Alimentos</option>
+              <option value="Electrónica">Electrónica</option>
+              <option value="Herramientas">Herramientas</option>
+              <option value="Ropa">Ropa</option>
+              <option value="Juguetes">Juguetes</option>
+              <option value="Deportes">Deportes</option>
+              <option value="Muebles">Muebles</option>
+              <option value="Otros">Otros</option>
+            </select>
+
+            <label for="updateDescription">Descripción</label>
+            <textarea
+              name="updateDescription"
+              id="updateDescription"
+              cols="30"
+              rows="10"
+              required
+            ></textarea>
+
+            <button type="submit" class="btn">Enviar</button>
+          </form>
+        </section>
+
+        <section>
+          <h2>Eliminar producto:</h2>
+          <form id="delete-product-form">
+            <label for="deleteId">ID</label>
+            <input type="text" name="deleteId" id="deleteId" required />
+
+            <button type="submit" class="btn">Enviar</button>
+          </form>
+        </section>
+      </div>
+    </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://kit.fontawesome.com/94c0117dd6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/getData.js"></script>
+    <script src="../js/products-section.js"></script>
+    <script src="../js/sessions.js"></script>
+    <script src="../js/admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Chat de administrador</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul id="admin-navbar"></ul>
+      </nav>
+      <div class="header__user">
+        <div class="user-data grid-item">
+          <a href="/"
+            ><img
+              src="../img/no-user.png"
+              class="logoAvatar"
+              alt="logo"
+              id="logo-avatar"
+          /></a>
+          <small id="small-email"></small>
+        </div>
+        <h3 class="grid-item middle-element">
+          Bienvenido <span id="span-name"></span>!
+        </h3>
+        <div class="icon-container">
+          <i
+            class="fa-solid fa-right-from-bracket grid-item"
+            onclick="logout()"
+            title="Cerrar sesión"
+          ></i>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>Listado de consultas de usuarios:</h2>
+        <p class="admin-chat">
+          Hola Admin! En el primer ingreso verás todos los mensajes, luego
+          cuando selecciones un usuario puntual podrás ver sólo esa conversación
+          y responderle. No te olvides de seleccionar el usuario correcto para enviarle el mensaje
+        </p>
+        <select name="listUsers" id="listUsers"></select>
+        <div class="chat-container">
+          <form id="chat-form" action="#">
+            <label for="chatMessage">Escribe tu mensaje:</label>
+            <input
+              type="text"
+              id="chatMessage"
+              name="chatMessage"
+              placeholder="Hola usuario!..."
+              required
+            />
+            <input
+              type="submit"
+              id="chatMessageButton"
+              name="chatMessageButton"
+              class="btn"
+              value="Enviar"
+            />
+          </form>
+          <div id="messages"></div>
+        </div>
+      </section>
+    </main>
+    <script src="../js/admin.js"></script>
+    <script src="../js/getData.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/websocket-admin.js"></script>
+    <script src="../js/sessions.js"></script>
+  </body>
+</html>

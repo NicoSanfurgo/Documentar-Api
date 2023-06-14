@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <title>Proyecto final backend</title>
+</head>
+
+<body>
+    <main>
+        <h1>Logueate para conocer productos</h1>
+        <form action="/login" method="post">
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="mail@ejemplo.com" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" placeholder="********" required>
+
+            <div class="btn__container">
+                <input class="btn active" type="submit" value="Ingresar">
+                <a class="btn" href="./register.html">Registrarse</a>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

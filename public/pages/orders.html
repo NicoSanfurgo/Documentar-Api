@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Ordenes</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul id="admin-navbar"></ul>
+      </nav>
+      <div class="header__user">
+        <div class="user-data grid-item">
+          <a href="/"
+            ><img
+              src="../img/no-user.png"
+              class="logoAvatar"
+              alt="logo"
+              id="logo-avatar"
+          /></a>
+          <small id="small-email"></small>
+        </div>
+        <h3 class="grid-item middle-element">
+          Bienvenido <span id="span-name"></span>!
+        </h3>
+        <div class="icon-container">
+          <a href="./chat.html">
+            <i
+              class="fa-regular fa-comment-dots grid-item"
+              title="Chatear con soporte"
+            ></i>
+          </a>
+          <i
+            class="fa-solid fa-right-from-bracket grid-item"
+            onclick="logout()"
+            title="Cerrar sesión"
+          ></i>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h1>Historial de órdenes</h1>
+      <hr />
+      <section>
+        <div class="orders-container">
+          <div class="orders-container__header">
+            <h2>Ordenes</h2>
+            <form id="ordersForm" class="orders-container__header__search">
+              <input
+                type="text"
+                placeholder="Ingrese ID a buscar..."
+                id="searchInput"
+                name="searchInput"
+              />
+              <button type="submit" class="sbm pointer">
+                <i class="fa-solid fa-search"></i>
+              </button>
+              <i class="fa-solid fa-arrows-rotate pointer" title="Resetear la búsqueda" onclick="init()"></i>
+            </form>
+          </div>
+          <div class="orders-container__body">
+            <table id="orders-table">
+              <thead>
+                <tr>
+                  <th>Número de orden</th>
+                  <th class="hide-mobile">Fecha</th>
+                  <th class="hide-mobile">Productos</th>
+                  <th class="hide-mobile">Estado</th>
+                  <th class="hide-mobile">Importe total</th>
+                  <th class="show-or-hide">Email usuario</th>
+                  <th class="show-or-hide">Marcar como entregada</th>
+                </tr>
+              </thead>
+              <tbody id="orders-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://kit.fontawesome.com/94c0117dd6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/getData.js"></script>
+    <script src="../js/orders-section.js"></script>
+    <script src="../js/sessions.js"></script>
+  </body>
+</html>
